@@ -11,10 +11,12 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         if(Instance == null)
         {
+            Debug.Log("GameManagerr created");
             Instance = this;
         }
         else
         {
+            Debug.Log("GameManagerr already existed => Destroy gameobject");
             PhotonNetwork.Destroy(gameObject);
         }
     }

@@ -6,7 +6,7 @@ using Photon.Pun;
 public class Player : MonoBehaviour
 {
     private PhotonView _photonView;
-
+    public Vector3 cameraOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
         if (_photonView.IsMine)
         {
             Transform mainCamera = Camera.main.transform;
-            mainCamera.position = transform.position;
+            mainCamera.position = transform.position + cameraOffset;
             transform.SetParent(Camera.main.transform);
         }
     }

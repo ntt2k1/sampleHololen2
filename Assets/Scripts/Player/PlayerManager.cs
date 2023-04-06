@@ -22,6 +22,9 @@ public class PlayerManager
 
     public void SpawnInstance(Vector3 position, Quaternion rotation)
     {
-        _instance = PhotonNetwork.Instantiate(GameManager.Instance.playerPrefab.name, position, rotation);
+        if(_instance == null)
+        {
+            _instance = PhotonNetwork.Instantiate(GameManager.Instance.playerPrefab.name, position, rotation);
+        }
     }
 }
