@@ -9,11 +9,9 @@ public class PlayerManager
     private GameObject _instance = null;
     public GameObject Instance { get => _instance; }
 
-    private string _id;
-    public string ID { get => _id; set => _id = value; }
+    [SerializeField] private string _id;
 
-    private string _name;
-    public string Name { get => _name; }
+    [SerializeField] private string _name;
 
     public PlayerManager(string name, string ID) {
         _name = name;
@@ -25,6 +23,17 @@ public class PlayerManager
         if(_instance == null)
         {
             _instance = PhotonNetwork.Instantiate(GameManager.Instance.playerPrefab.name, position, rotation);
+            _instance.GetComponent<Player>().SetManager(this);
         }
+    }
+
+    public string GetPlayerID()
+    {
+        return _id;
+    }
+
+    public string GetPlayerName()
+    {
+        return _name;
     }
 }

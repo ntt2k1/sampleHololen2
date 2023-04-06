@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 {
     private PhotonView _photonView;
     public Vector3 cameraOffset;
+    [SerializeField] private string playerName;
+    [SerializeField] private string id;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +21,12 @@ public class Player : MonoBehaviour
             mainCamera.position = transform.position + cameraOffset;
             transform.SetParent(Camera.main.transform);
         }
+    }
+
+    public void SetManager(PlayerManager info)
+    {
+        playerName = info.GetPlayerName();
+        id = info.GetPlayerID();
+
     }
 }

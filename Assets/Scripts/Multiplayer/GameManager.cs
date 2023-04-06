@@ -24,8 +24,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
     public GameObject playerPrefab;
-    private List<PlayerManager> _players = new List<PlayerManager>();
-    public List<PlayerManager> Players { get => _players; }
+    [SerializeField] private List<PlayerManager> _players = new List<PlayerManager>();
 
     private void Start()
     {
@@ -53,7 +52,11 @@ public class GameManager : MonoBehaviourPunCallbacks
         PlayerManager playerInfo = new PlayerManager(name, id);
         if (AddPlayer(playerInfo))
         {
-            SpawnPlayers();
+            float radius = 10.0f;
+            Vector3 randomPos = Vector3.zero + UnityEngine.Random.insideUnitSphere * radius;
+            randomPos.y = 0;
+            Debug.Log("SpawnPlayer");
+            playerInfo.SpawnInstance(randomPos, Quaternion.identity);
         }
     }
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
@@ -78,13 +81,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (newPlayer == null) return false;
         foreach (PlayerManager player in _players)
         {
-            if (player.ID == newPlayer.ID)
+            if (player.GetPlayerID() == newPlayer.GetPlayerID())
             {
-                Debug.Log("Player " + newPlayer.ID + " already existed");
+                Debug.Log("Player " + newPlayer.GetPlayerID() + " already existed");
                 return false;
             }
         }
-        Debug.Log("Add player " + newPlayer.ID);
+        Debug.Log("Add player " + newPlayer.GetPlayerID());
         _players.Add(newPlayer);
         return true;
     }
@@ -92,7 +95,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         foreach (PlayerManager player in _players)
         {
-            if(player.ID == ID)
+            if(player.GetPlayerID() == ID)
             {
                 Debug.Log("Remove player " + ID);
                 _players.Remove(player);
