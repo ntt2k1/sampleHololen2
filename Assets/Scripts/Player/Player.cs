@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void SetManager(PlayerManager info)
+    public void SyncPlayerInfo(PlayerManager info)
     {
         playerName = info.GetPlayerName();
         id = info.GetPlayerID();

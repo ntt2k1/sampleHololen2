@@ -13,7 +13,7 @@ public class CreateAndJoinRoom : MonoBehaviourPunCallbacks
     public TMP_InputField userNameInput;
 
     public string gameSceneName;
-
+    private bool isHost = false;
 
     public void CreateRoom()
     {
@@ -28,14 +28,7 @@ public class CreateAndJoinRoom : MonoBehaviourPunCallbacks
         else
         {
             Debug.Log("Create Room: " + createRoomInput.text);
-
-
-            ExitGames.Client.Photon.Hashtable playerCustomProperties = new ExitGames.Client.Photon.Hashtable();
-            playerCustomProperties.Add("HostPlayerName", userNameInput.text);
-            playerCustomProperties.Add("HostPlayerID" , PhotonNetwork.LocalPlayer.UserId);
-
-            PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProperties);
-
+            isHost = true;
             PhotonNetwork.CreateRoom(createRoomInput.text);
         }
     }
@@ -53,14 +46,7 @@ public class CreateAndJoinRoom : MonoBehaviourPunCallbacks
         else
         {
             Debug.Log("Join Room: " + joinRoomInput.text);
-
-
-            ExitGames.Client.Photon.Hashtable playerCustomProperties = new ExitGames.Client.Photon.Hashtable();
-            playerCustomProperties.Add("PlayerName", userNameInput.text);
-            playerCustomProperties.Add("PlayerID", PhotonNetwork.LocalPlayer.UserId);
-            
-            PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProperties);
-
+            isHost = false;
             PhotonNetwork.JoinRoom(joinRoomInput.text);
         }
     }
@@ -68,6 +54,27 @@ public class CreateAndJoinRoom : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("OnJoinedRoom");
-        PhotonNetwork.LoadLevel(gameSceneName);
+        if (PhotonNetwork.InRoom && PhotonNetwork.CurrentRoom != null)
+        {
+            string name = userNameInput.text;
+            string id = PhotonNetwork.LocalPlayer.UserId;
+            if (isHost)
+            {
+                PhotonNetwork.CurrentRoom.CustomProperties.Add("HostPlayerName", name);
+                PhotonNetwork.CurrentRoom.CustomProperties.Add("HostPlayerID", id);
+
+            }
+            else
+            {
+                PhotonNetwork.CurrentRoom.CustomProperties.Add("PlayerName", name);
+                PhotonNetwork.CurrentRoom.CustomProperties.Add("PlayerID", id);
+            }
+
+            
+            Debug.Log("PhotonNetwork.CurrentRoom.CustomProperties: " + PhotonNetwork.CurrentRoom.CustomProperties);
+
+            PhotonNetwork.LoadLevel(gameSceneName);
+        }
+        
     }
 }

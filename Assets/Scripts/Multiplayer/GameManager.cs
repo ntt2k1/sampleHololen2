@@ -6,17 +6,18 @@ using Photon.Pun;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     #region Singleton
-    public static GameManager Instance;
+    public static GameManager Instance = null;
     private void Awake()
     {
         if(Instance == null)
         {
-            Debug.Log("GameManagerr created");
+            Debug.Log("GameManager created");
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Debug.Log("GameManagerr already existed => Destroy gameobject");
+            Debug.Log("GameManager already existed => Destroy gameobject");
             PhotonNetwork.Destroy(gameObject);
         }
     }
@@ -29,9 +30,13 @@ public class GameManager : MonoBehaviourPunCallbacks
     private void Start()
     {
         //Get Host Player
-        ExitGames.Client.Photon.Hashtable playerCustomProperties = PhotonNetwork.LocalPlayer.CustomProperties;
+        ExitGames.Client.Photon.Hashtable playerCustomProperties = PhotonNetwork.CurrentRoom.CustomProperties;
+        Debug.Log("len: " + PhotonNetwork.CurrentRoom.CustomProperties.Count);
         string name = (string)playerCustomProperties["HostPlayerName"];
+        Debug.Log("HostPlayerName: " + name);
         string id = (string)playerCustomProperties["HostPlayerID"];
+        Debug.Log("HostPlayerID: " + id);
+
         PlayerManager playerInfo = new PlayerManager(name, id);
         if (playerInfo != null)
         {
@@ -42,13 +47,16 @@ public class GameManager : MonoBehaviourPunCallbacks
         SpawnPlayers();
     }
 
-    
 
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
     {
-        ExitGames.Client.Photon.Hashtable playerCustomProperties = PhotonNetwork.LocalPlayer.CustomProperties;
+        Debug.Log("OnPlayerEnteredRoom");
+        ExitGames.Client.Photon.Hashtable playerCustomProperties = PhotonNetwork.CurrentRoom.CustomProperties;
         string name = (string)playerCustomProperties["PlayerName"];
+        Debug.Log("PlayerName: " + name);
         string id = (string)playerCustomProperties["PlayerID"];
+        Debug.Log("PlayerID: " + id);
+
         PlayerManager playerInfo = new PlayerManager(name, id);
         if (AddPlayer(playerInfo))
         {
@@ -61,6 +69,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
+        Debug.Log("OnPlayerLeftRoom");
         RemovePlayer(otherPlayer.UserId);
     }
     private void SpawnPlayers()

@@ -23,7 +23,7 @@ public class PlayerManager
         if(_instance == null)
         {
             _instance = PhotonNetwork.Instantiate(GameManager.Instance.playerPrefab.name, position, rotation);
-            _instance.GetComponent<Player>().SetManager(this);
+            _instance.GetComponent<Player>().SyncPlayerInfo(this);
         }
     }
 
