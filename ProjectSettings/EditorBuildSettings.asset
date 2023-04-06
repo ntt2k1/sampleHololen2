@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/HelolenScene.unity
-    guid: d977f37685aad6649a4102f12182a382
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 1e49591e08151f54096c85bd665c62fd
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
