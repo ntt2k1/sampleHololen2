@@ -9,17 +9,17 @@ public class GameManager : MonoBehaviourPunCallbacks
     public static GameManager Instance = null;
     private void Awake()
     {
-        if(Instance == null)
-        {
-            Debug.Log("GameManager created");
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (Instance != null && Instance != this)
         {
             Debug.Log("GameManager already existed => Destroy gameobject");
-            PhotonNetwork.Destroy(gameObject);
+            Destroy(gameObject);
+            return;
         }
+
+        Debug.Log("GameManager created");
+        Instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
     #endregion
 
@@ -41,10 +41,15 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (playerInfo != null)
         {
             _players.Add(playerInfo);
+            float radius = 10.0f;
+            Vector3 randomPos = Vector3.zero + UnityEngine.Random.insideUnitSphere * radius;
+            randomPos.y = 0;
+            Debug.Log("SpawnPlayer");
+            playerInfo.SpawnInstance(randomPos, Quaternion.identity);
         }
 
         // spawn player instances
-        SpawnPlayers();
+        //SpawnPlayers();
     }
 
 
@@ -58,7 +63,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         Debug.Log("PlayerID: " + id);
 
         PlayerManager playerInfo = new PlayerManager(name, id);
-        if (AddPlayer(playerInfo))
+        if (AddPlayer(playerInfo) && playerInfo.PlayerInstance == null)
         {
             float radius = 10.0f;
             Vector3 randomPos = Vector3.zero + UnityEngine.Random.insideUnitSphere * radius;
@@ -72,19 +77,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         Debug.Log("OnPlayerLeftRoom");
         RemovePlayer(otherPlayer.UserId);
     }
-    private void SpawnPlayers()
-    {
-        foreach(PlayerManager player in _players)
-        {
-            if(player.Instance == null)
-            {
-                float radius = 10.0f;
-                Vector3 randomPos = Vector3.zero + UnityEngine.Random.insideUnitSphere * radius;
-                Debug.Log("SpawnPlayer");
-                player.SpawnInstance(randomPos, Quaternion.identity);
-            }
-        }
-    }
+   
     public bool AddPlayer(PlayerManager newPlayer)
     {
         if (newPlayer == null) return false;

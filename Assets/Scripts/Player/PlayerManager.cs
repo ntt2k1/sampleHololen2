@@ -7,7 +7,7 @@ using Photon.Pun;
 public class PlayerManager
 {
     private GameObject _instance = null;
-    public GameObject Instance { get => _instance; }
+    public GameObject PlayerInstance { get => _instance; }
 
     [SerializeField] private string _id;
 
