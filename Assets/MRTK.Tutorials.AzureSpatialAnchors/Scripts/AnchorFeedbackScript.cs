@@ -31,7 +31,7 @@
 
 //    void Start()
 //    {
-//        feedbackText.text = "";    
+//        feedbackText.text = "";
 //    }
 
 //    private void AnchorModuleScript_OnStartASASession()
