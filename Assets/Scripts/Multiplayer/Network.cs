@@ -1,9 +1,13 @@
 using Photon.Pun;
 using Photon.Realtime;
+using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Network : MonoBehaviourPunCallbacks
 {
+    public bool isAudience;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,5 +71,27 @@ public class Network : MonoBehaviourPunCallbacks
     {
         base.OnLeftRoom();
         Application.Quit();
+    }
+
+    public override void OnJoinedRoom()
+    {
+        //if (isAudience)
+        //{
+        //    InitZED();
+        //}
+        //else
+        //{
+        //    InitHololens();
+        //}
+    }
+
+    private void InitHololens()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void InitZED()
+    {
+        throw new NotImplementedException();
     }
 }
