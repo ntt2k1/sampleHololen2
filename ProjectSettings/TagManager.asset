@@ -21,6 +21,7 @@ TagManager:
   - 
   - 
   - 
+  - tagInvisibleToZED
   - 
   - 
   - 
@@ -34,8 +35,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - arlayer
   - Spatial Awareness
   m_SortingLayers:
   - name: Default

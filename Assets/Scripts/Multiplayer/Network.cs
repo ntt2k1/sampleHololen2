@@ -8,6 +8,9 @@ public class Network : MonoBehaviourPunCallbacks
 {
     public bool isAudience;
 
+    public Transform ARCamera;
+    public GameObject zedCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,23 +78,27 @@ public class Network : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        //if (isAudience)
-        //{
-        //    InitZED();
-        //}
-        //else
-        //{
-        //    InitHololens();
-        //}
+        if (isAudience)
+        {
+           InitZED();
+        }
+        else
+        {
+           InitHololens();
+        }
     }
 
     private void InitHololens()
     {
-        throw new NotImplementedException();
+        GameObject playerModel = PhotonNetwork.Instantiate("Player", ARCamera.transform.position, ARCamera.transform.rotation);
+        if (playerModel.GetComponent<PhotonView>().IsMine) {
+            playerModel.transform.parent = ARCamera;
+        }
     }
 
     private void InitZED()
     {
-        throw new NotImplementedException();
+        Instantiate(zedCamera);
+        ARCamera.gameObject.SetActive(false);
     }
 }
