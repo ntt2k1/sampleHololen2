@@ -73,8 +73,8 @@ public class CreateAndJoinRoom : MonoBehaviourPunCallbacks
             
             Debug.Log("PhotonNetwork.CurrentRoom.CustomProperties: " + PhotonNetwork.CurrentRoom.CustomProperties);
 
-            PhotonNetwork.LoadLevel(gameSceneName);
         }
+            PhotonNetwork.LoadLevel(gameSceneName);
         
     }
 }

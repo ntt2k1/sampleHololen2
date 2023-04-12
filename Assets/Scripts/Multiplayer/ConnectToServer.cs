@@ -11,6 +11,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     {
         loadingText.SetActive(true);
         lobby.SetActive(false);
+        PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.ConnectUsingSettings();
     }
 
