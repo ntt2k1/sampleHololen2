@@ -8,8 +8,15 @@ public class Network : MonoBehaviourPunCallbacks
 {
     public bool isAudience;
 
+    [Header("Hololens")]
     public Transform ARCamera;
+    public Transform imageTargetHolder;
+
+    [Header("ZedCamera")]
     public GameObject zedCamera;
+    public GameObject marker;
+    public GameObject zedCaptureToOpenCV;
+    public GameObject ArUcoDetectManager;
 
     // Start is called before the first frame update
     void Start()
@@ -92,13 +99,43 @@ public class Network : MonoBehaviourPunCallbacks
     {
         GameObject playerModel = PhotonNetwork.Instantiate("Player", ARCamera.transform.position, ARCamera.transform.rotation);
         if (playerModel.GetComponent<PhotonView>().IsMine) {
-            playerModel.transform.parent = ARCamera;
+            playerModel.GetComponent<MoveARCamera>().ARCamera = ARCamera;
         }
     }
 
     private void InitZED()
     {
-        Instantiate(zedCamera);
         ARCamera.gameObject.SetActive(false);
+        Instantiate(zedCamera);
+        Transform cameraEye = zedCamera.transform.Find("Camera_eyes");
+        Transform leftEye = cameraEye.Find("Left_eye");
+        leftEye.gameObject.tag = "MainCamera";
+
+        Instantiate(zedCaptureToOpenCV);
+        Instantiate(ArUcoDetectManager);
+        originalRotation = imageTargetHolder.eulerAngles;
+
+    }
+    private Vector3 originalRotation;
+    private float interval = 0.0f;
+    private float intervalCount = 0f;
+    private void Update()
+    {
+        if(intervalCount >= interval)
+        {
+            if (marker.activeSelf)
+            {
+                Debug.Log("reset marker");
+                imageTargetHolder.position = marker.transform.position;
+                imageTargetHolder.eulerAngles = marker.transform.eulerAngles;
+                intervalCount = 0f;
+            }
+        }
+        else
+        {
+            intervalCount += Time.deltaTime;
+        }
+
+
     }
 }
