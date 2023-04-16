@@ -1,23 +1,3 @@
-using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MoveARCamera : MonoBehaviour
-{
-    public Transform ARCamera;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (GetComponent<PhotonView>().IsMine)
-        {
-            transform.position = ARCamera.position;
-            transform.rotation = ARCamera.rotation;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4c8668daf7a9a7303dfa839b94b931b30eb656fa591d6331401154997a29bebe
+size 547
