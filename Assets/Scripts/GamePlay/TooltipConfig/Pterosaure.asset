@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd57e27aa343254db0fe6b2d69ed9e9, type: 3}
+  m_Name: Pterosaure
+  m_EditorClassIdentifier: 
+  tooltipColliderInfos:
+  - position: {x: 1.37, y: 0.709, z: -0.13}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    size: {x: 2.853, y: 0.457, z: 0.78}
+    text: "A pterosaur\u2019s wings were membranes of skin and muscle. The wings
+      were attached to the elongated fourth finger of each of the animal\u2019s forelimbs"
+  - position: {x: -1.735, y: 0.709, z: -0.059}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    size: {x: 2.853, y: 0.457, z: 0.78}
+    text: "A pterosaur\u2019s wings were membranes of skin and muscle. The wings
+      were attached to the elongated fourth finger of each of the animal\u2019s forelimbs"
+  - position: {x: -0.146, y: 0.854, z: 0.72}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    size: {x: 0.3536, y: 0.7692, z: 1}
+    text: A distinguishing feature of pterosaurs was the crest on their heads. Though
+      it was initially thought that pterosaurs had no crests, it's now known that
+      crests were widespread across pterosaur genera and came in various forms

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd57e27aa343254db0fe6b2d69ed9e9, type: 3}
+  m_Name: Utalraptor
+  m_EditorClassIdentifier: 
+  tooltipColliderInfos:
+  - position: {x: 0, y: 0.245, z: 0.633}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    size: {x: 0.509, y: 0.37, z: 0.45}
+    text: Although feathers have never been found in association with Utahraptor
+      specimens, there is strong phylogenetic evidence suggesting that all dromaeosaurids
+      had them
+  - position: {x: 0, y: 0.729, z: 0.936}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 0, y: 0, z: 0}
+    size: {x: 0.509, y: 0.37, z: 0.45}
+    text: It had sharp, serrated teeth used to tear flesh and sometimes even crushed
+      bones. The teeth make a bunch of Utahraptor scarier than a T-rex.
+  - position: {x: 0, y: 0.607, z: -0.752}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    size: {x: 0.509, y: 0.2752, z: 1.4168}
+    text: This raptor was nearly 25 feet long and weighed about 5 tons. It was about
+      ten times heavier than the average raptor. It had a long tail that was used
+      for balance and quick turning ability.

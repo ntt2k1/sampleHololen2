@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab5de8725070e2e4543543f9c4fecf5dc7d935f5759866060dfb2ba44e45936f
-size 128
+*.assets filter=lfs diff=lfs merge=lfs -text
+*.tgz filter=lfs diff=lfs merge=lfs -text

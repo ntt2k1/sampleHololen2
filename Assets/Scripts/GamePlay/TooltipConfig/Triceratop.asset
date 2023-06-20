@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd57e27aa343254db0fe6b2d69ed9e9, type: 3}
+  m_Name: Triceratop
+  m_EditorClassIdentifier: 
+  tooltipColliderInfos:
+  - position: {x: 0.08, y: 1, z: 0.824}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 0.8, y: 0.8, z: 0.8}
+    size: {x: 1.149212, y: 0.9859541, z: 1.109491}
+    text: Triceratops is Greek for "three-horned face," but this dinosaur actually
+      had only two genuine horns; the third, a much shorter "horn" on the end of
+      its snout, was made from a soft protein called keratin, the kind found in human
+      fingernails, and wouldn't have been much use in a tussle with a hungry raptor
+  - position: {x: 0.007, y: 0.8, z: -0.287}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 0.8, y: 0.8, z: 0.8}
+    size: {x: 1, y: 1, z: 1}
+    text: "riceratops was a massive animal, comparable in size to an African elephant,
+      according to a 2011 article in the journal Cretaceous Research. It grew up
+      to 30 feet (9 meters) and weighed well over 11,000 lbs. (5,000 kg) \u2014 some
+      large specimens weighed nearly 15,750 lbs. (7,150 kg)"
+  - position: {x: 0.007, y: 0.158, z: -0.421}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 0.8, y: 0.8, z: 0.8}
+    size: {x: 0.9195, y: 0.32942, z: 0.8145}
+    text: Triceratops could move only at 10mph (16kph)

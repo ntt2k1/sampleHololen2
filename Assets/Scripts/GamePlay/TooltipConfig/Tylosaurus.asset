@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd57e27aa343254db0fe6b2d69ed9e9, type: 3}
+  m_Name: Tylosaurus
+  m_EditorClassIdentifier: 
+  tooltipColliderInfos:
+  - position: {x: -0.037, y: 0.065, z: 0.454}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    size: {x: 0.376, y: 0.17176, z: 0.3582}
+    text: Tylosaurus' had a long and strong snout
+  - position: {x: 0, y: 0.065, z: -0.216}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    size: {x: 0.2356, y: 0.17176, z: 0.6045}
+    text: Tylosaurus grew more than 45 feet (14 meters) long, making it the largest
+      of the marine reptiles called mosasaurs. Like all mosasaurs, a long and muscular,
+      vertically flattened tail powered Tylosaurus through the water, allowing it
+      to ambush its prey with rapid bursts of acceleration
