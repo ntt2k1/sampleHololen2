@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1eedc7490a53eb5d3e1369a65c08279e63c2d3d3f50365c2e945aca1ed2c4a0f
-size 438
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "New Tooltip Collider Config", menuName = "TOOLTIP CONFIG")]
+public class TooltipConfig : ScriptableObject
+{
+    public TooltipColliderInfo[] tooltipColliderInfos;
+
+}
+
+[System.Serializable]
+public struct TooltipColliderInfo{
+    public Vector3 position;
+    public Quaternion rotation;
+    public Vector3 scale;
+    public Vector3 size;
+    public string text;
+}

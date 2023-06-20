@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:75722e4bd3012de58981b53e9289d5405c48f9dc5e0db0a51b911892a1701bb4
-size 483
+using Photon.Pun;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class MoveARCamera : MonoBehaviour
+{
+    public Transform ARCamera;
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (GetComponent<PhotonView>().IsMine)
+        {
+            transform.position = ARCamera.position;
+            transform.eulerAngles = ARCamera.eulerAngles;
+        }
+
+    }
+}
