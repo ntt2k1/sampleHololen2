@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/DemoScene.unity
-    guid: b513ecd1a769980439cef41611978a01
+  - enabled: 0
+    path: Packages/com.microsoft.mixedreality.webrtc.samples/Runtime/Scenes/VideoChatDemo/VideoChatDemo.unity
+    guid: d3b2f1f0ebd44dc4aaf677c227320d9c
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 438ba4721f8e1e34b8b6ac5de3fdcd92,
       type: 2}

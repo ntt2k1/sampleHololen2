@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipConfig: {fileID: 11400000, guid: 1b523173a3be9d24bb1f7032f018c285, type: 2}
-  skinObj: {fileID: 2255320923778215894}
-  skeletonObj: {fileID: 2161027007657873452}
+  skinObj: {fileID: 2161027007657873452}
+  skeletonObj: {fileID: 2255320923778215894}
 --- !u!114 &-6146064517638135912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3cca543baed083e409162f3d159dd00b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cca543baed083e409162f3d159dd00b, type: 3}
@@ -401,6 +401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: canglong
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5489149b2d0617040be69000b865e647,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5489149b2d0617040be69000b865e647, type: 3}
