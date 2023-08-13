@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e24a28679771b43b45c63b09546d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 5588756241589994820}
   tooltipConfig: {fileID: 11400000, guid: 1b523173a3be9d24bb1f7032f018c285, type: 2}
   skinObj: {fileID: 2161027007657873452}
   skeletonObj: {fileID: 2255320923778215894}
@@ -209,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 0}
+  photonView: {fileID: 5588756241589994820}
 --- !u!1001 &1242126312143072637
 PrefabInstance:
   m_ObjectHideFlags: 0

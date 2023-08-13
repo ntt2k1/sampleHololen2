@@ -153,7 +153,8 @@ public class Player : MonoBehaviour, IMixedRealityPointerHandler
     {
         if (!cardChose.Skeleton.activeSelf)
         {
-            cardChose.Skeleton.SetActive(true);
+            cardChose.Skeleton.GetComponent<TooltipCollider>().SetSkeletonActive(true);
+
         }
         cardChose.Skeleton.transform.position = position;
         cardChose.Skeleton.transform.rotation = Quaternion.identity;

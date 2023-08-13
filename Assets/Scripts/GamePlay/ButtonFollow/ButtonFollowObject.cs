@@ -26,13 +26,13 @@ public class ButtonFollowObject : MonoBehaviour
     public void ChangeToTooltip()
     {
         targetCard.Skeleton.GetComponent<Dino>().RequestOwnership();
-        Collider collider = targetCard.Skeleton.GetComponent<Collider>();
-        collider.enabled = !collider.enabled;
+        targetCard.ChangeTooltip();
+       
     }
 
     public void DisablePrefab()
     {
         targetCard.Skeleton.GetComponent<Dino>().RequestOwnership();
-        targetCard.Skeleton.SetActive(false);
+        targetCard.SetSkeletonActive(false);
     }
 }

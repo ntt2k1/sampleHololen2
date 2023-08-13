@@ -7,6 +7,8 @@ using UnityEngine;
 public class Dino : MonoBehaviourPun, IMixedRealityPointerHandler
 {
     public Card card;
+
+    public PhotonView photonView;
     public void OnPointerClicked(MixedRealityPointerEventData eventData)
     {
         if (card != null)

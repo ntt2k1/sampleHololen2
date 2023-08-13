@@ -1460,7 +1460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3031275762454975614
 Transform:
   m_ObjectHideFlags: 0
@@ -1719,7 +1719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3179041421189216629
 Transform:
   m_ObjectHideFlags: 0
@@ -2027,6 +2027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e24a28679771b43b45c63b09546d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 5588756241589994820}
   tooltipConfig: {fileID: 11400000, guid: e309f7d20f8db1c44a1a1ee9a52d12e9, type: 2}
   skinObj: {fileID: 2834428795460264911}
   skeletonObj: {fileID: 2403393408611716804}
@@ -2043,6 +2044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 0}
+  photonView: {fileID: 5588756241589994820}
 --- !u!1 &3089392097582547621
 GameObject:
   m_ObjectHideFlags: 0
