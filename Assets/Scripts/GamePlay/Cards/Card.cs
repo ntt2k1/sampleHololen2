@@ -39,7 +39,7 @@ public class Card : MonoBehaviour
                 skeleton.GetComponent<Collider>().enabled = true;
             }
 
-            skeleton.SetActive(false);
+            skeleton.GetComponent<TooltipCollider>().SetSkeletonActive(false);
             InitButtonApp();
         }
     }
@@ -58,6 +58,15 @@ public class Card : MonoBehaviour
         isSkin = !isSkin;
     }
 
+
+    public void ChangeTooltip(){
+        skeleton.GetComponent<TooltipCollider>().ChangeTooltip();
+    }
+
+    public void SetSkeletonActive(bool active){
+        skeleton.GetComponent<TooltipCollider>().SetSkeletonActive(active);
+    }
+
     private void InitButtonApp()
     {
         buttonApp.GetComponent<ButtonFollowObject>().SetCardControl(this);
@@ -72,7 +81,7 @@ public class Card : MonoBehaviour
 
         GameManager.Instance.playerManager.CardChose = this;
         GameManager.Instance.playerManager.onCardSelect = true;
-        Skeleton.SetActive(true);
+        Skeleton.GetComponent<TooltipCollider>().SetSkeletonActive(true);
         Skeleton.GetComponent<Collider>().enabled = false;
         buttonApp.SetActive(true);
     }
