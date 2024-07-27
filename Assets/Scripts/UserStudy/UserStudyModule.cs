@@ -65,6 +65,7 @@ namespace UserStudy
 
         private void Update()
         {
+            if (GameManager.Instance.isAudience) return;
             GetRayCastHit();
         }
     }
