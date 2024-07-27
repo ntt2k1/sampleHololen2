@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:49672dcd67047addd3cb955fe703e8d48ca982e41f8c081090aa70d41c04944b
-size 1445
+using UnityEngine;
+
+[RequireComponent(typeof(MeshFilter))]
+public class MeshSimplifier : MonoBehaviour
+{
+    [SerializeField, Range(0f, 1f), Tooltip("The desired quality of the simplified mesh.")]
+    private float quality = 0.5f;
+
+    private void Start()
+    {
+        Simplify();
+    }
+
+    private void Simplify()
+    {
+        var meshFilter = GetComponent<MeshFilter>();
+        if (meshFilter == null) 
+            return;
+
+        Mesh sourceMesh = meshFilter.sharedMesh;
+        if (sourceMesh == null) 
+            return;
+
+        var meshSimplifier = new UnityMeshSimplifier.MeshSimplifier();
+        //meshSimplifier.Vertices = sourceMesh.vertices;
+
+        //for (int i = 0; i < sourceMesh.subMeshCount; i++)
+        //{
+        //    meshSimplifier.AddSubMeshTriangles(sourceMesh.GetTriangles(i));
+        //}
+        meshSimplifier.Initialize(sourceMesh);
+
+        meshSimplifier.SimplifyMesh(quality);
+
+        var destMesh = meshSimplifier.ToMesh();
+        GetComponent<MeshFilter>().sharedMesh = destMesh;
+
+        //var newMesh = new Mesh();
+        //newMesh.subMeshCount = meshSimplifier.SubMeshCount;
+        //newMesh.vertices = meshSimplifier.Vertices;
+
+        //for (int i = 0; i < meshSimplifier.SubMeshCount; i++)
+        //{
+        //    newMesh.SetTriangles(meshSimplifier.GetSubMeshTriangles(i), 0);
+        //}
+
+        //meshFilter.sharedMesh = newMesh;
+    }
+}

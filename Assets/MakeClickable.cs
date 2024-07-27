@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0452a802075a80c9a8399acd040126d4163dadbd4fc1dc7b157a39be930a10e6
-size 669
+using System.Collections;
+using System.Collections.Generic;
+using Microsoft.MixedReality.Toolkit.Input;
+using UnityEngine;
+
+public class MakeClickable : MonoBehaviour, IMixedRealityPointerHandler
+{
+    public void OnPointerClicked(MixedRealityPointerEventData eventData)
+    {
+        print("Click");
+    }
+
+    public void OnPointerDown(MixedRealityPointerEventData eventData)
+    {
+        // print("Click");
+    }
+
+    public void OnPointerDragged(MixedRealityPointerEventData eventData)
+    {
+        // print("Click");
+    }
+
+    public void OnPointerUp(MixedRealityPointerEventData eventData)
+    {
+        // print("Click");
+    }
+
+}

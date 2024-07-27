@@ -14,8 +14,6 @@ public partial class GameManager
     public bool HololensMarkerTracked { get => hololensMarkerTracked; set => hololensMarkerTracked = value; }
     private bool hololensMarkerTracked = false;
 
-    private Transform ARPlaySpace;
-    
 
     public void InitHololens()
     {
@@ -63,7 +61,7 @@ public partial class GameManager
    
     private void TurnOffVuforia()
     {
-        Debug.Log("Turn off vuforia");
+        //Debug.Log("Turn off vuforia");
         ARCamera.GetComponent<VuforiaBehaviour>().enabled = false;
 
         ARCamera.transform.SetParent(imageTarget);

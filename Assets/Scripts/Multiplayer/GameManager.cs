@@ -18,10 +18,12 @@ public partial class GameManager : MonoBehaviourPunCallbacks
     public Player playerManager;
 
     [Header("Hololens")]
+    public Transform ARPlaySpace;
     public GameObject ARCamera;
     public Transform imageTarget;
     public GameObject playerPrefab;
-  
+
+
 
     [Header("ZedCamera")]
     public Transform zedCameraTransform;
@@ -29,6 +31,7 @@ public partial class GameManager : MonoBehaviourPunCallbacks
     public GameObject zedRigStereo;
     public GameObject zedCaptureToOpenCV;
     public GameObject ArUcoDetectManager;
+    public GameObject SkeletonTrackerModule;
 
     private bool init = false;
     private void Update()
